@@ -27,32 +27,20 @@
 module powerbi.extensibility.visual {
     "use strict";
     export class Visual implements IVisual {
-        private target: HTMLElement;
-        private updateCount: number;
-        private settings: VisualSettings;
-        private textNode: Text;
+
+        private host:IVisualHost;
+        private svg: d3.Selection<SVGElement,any,HTMLElement,any>
 
         constructor(options: VisualConstructorOptions) {
-            console.log('Visual constructor', options);
-            this.target = options.element;
-            this.updateCount = 0;
-            if (typeof document !== "undefined") {
-                const new_p: HTMLElement = document.createElement("p");
-                new_p.appendChild(document.createTextNode("Update count:"));
-                const new_em: HTMLElement = document.createElement("em");
-                this.textNode = document.createTextNode(this.updateCount.toString());
-                new_em.appendChild(this.textNode);
-                new_p.appendChild(new_em);
-                this.target.appendChild(new_p);
-            }
+            this.host=options.host;
+             this.svg=d3.select(options.element)
+                .append("svg")
+                .classed("my-little-bar-chart",true)
+            
         }
 
         public update(options: VisualUpdateOptions) {
-            this.settings = Visual.parseSettings(options && options.dataViews && options.dataViews[0]);
-            console.log('Visual update', options);
-            if (typeof this.textNode !== "undefined") {
-                this.textNode.textContent = (this.updateCount++).toString();
-            }
+            
         }
 
         private static parseSettings(dataView: DataView): VisualSettings {

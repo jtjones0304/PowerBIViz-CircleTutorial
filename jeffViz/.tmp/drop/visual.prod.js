@@ -614,7 +614,7 @@ var powerbi;
                     function Visual(options) {
                         console.log('Visual constructor', options);
                         this.target = options.element;
-                        this.updateCount = 0;
+                        this.updateCount = 10;
                         if (typeof document !== "undefined") {
                             var new_p = document.createElement("p");
                             new_p.appendChild(document.createTextNode("Update count:"));
