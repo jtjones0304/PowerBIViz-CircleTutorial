@@ -1,7 +1,7 @@
 module powerbi.visuals.plugins {
-    export var circleCardF104EFC651FB424F8716C3D9476F1A63_DEBUG = {
-        name: 'circleCardF104EFC651FB424F8716C3D9476F1A63_DEBUG',
-        displayName: 'CircleCard',
+    export var circleCardF104EFC651FB424F8716C3D9476F1A63 = {
+        name: 'circleCardF104EFC651FB424F8716C3D9476F1A63',
+        displayName: 'Circle Card',
         class: 'Visual',
         version: '1.0.0',
         apiVersion: '1.13.0',

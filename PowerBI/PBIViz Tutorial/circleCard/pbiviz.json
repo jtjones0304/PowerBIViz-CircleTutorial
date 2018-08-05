@@ -1,25 +1,25 @@
 {
   "visual": {
     "name": "circleCard",
-    "displayName": "CircleCard",
+    "displayName": "Circle Card",
     "guid": "circleCardF104EFC651FB424F8716C3D9476F1A63",
     "visualClassName": "Visual",
     "version": "1.0.0",
-    "description": "",
+    "description": "Display a formatted value inside a circle",
     "supportUrl": "",
     "gitHubUrl": ""
   },
   "apiVersion": "1.13.0",
   "author": {
-    "name": "",
-    "email": ""
+    "name": "Jeff Jones",
+    "email": "jeff.jones026@dignityhealth.org"
   },
   "assets": {
     "icon": "assets/icon.png"
   },
   "externalJS": [
     "node_modules/powerbi-visuals-utils-dataviewutils/lib/index.js",
-    "nod_modiles/d3/d3.min.js"
+    "node_modules/d3/d3.min.js"
   ],
   "style": "style/visual.less",
   "capabilities": "capabilities.json",
